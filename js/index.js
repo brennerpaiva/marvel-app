@@ -1,5 +1,3 @@
-//marvel js correto
-
 
 const timeStamp = "1673440309";
 
