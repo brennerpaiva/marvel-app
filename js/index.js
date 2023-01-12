@@ -49,7 +49,7 @@ function setAllHeroes(heroes) {
 
 // Buscar todos os heróis da Marvel
 function getAllHeroes() {
-  fetch(`http://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${marvelApiKey}&hash=${md5}&limit=100`)
+  fetch(`http://gateway.marvel.com/v1/public/characters?apikey=${marvelApiKey}&limit=100`)
     .then(response => response.json())
     .then(response => {
       const heroes = response.data.results;
