@@ -1,7 +1,4 @@
-
-const timeStamp = "1673440309";
-const marvelApiKey ='2bbfb63c4afc519cfec90a8264bb31bd';
-const md5 = "f60978396333b3a64f5c2a1ceee8863d";
+const marvelApiKey = '2bbfb63c4afc519cfec90a8264bb31bd';
 
 // Criar o slider com Swipper
 function createNewSwiper() {
@@ -49,7 +46,7 @@ function setAllHeroes(heroes) {
 
 // Buscar todos os heróis da Marvel
 function getAllHeroes() {
-  fetch(`http://gateway.marvel.com/v1/public/characters?apikey=${marvelApiKey}&limit=100`)
+  fetch(`https://gateway.marvel.com:443/v1/public/characters?apikey=${marvelApiKey}&limit=100`)
     .then(response => response.json())
     .then(response => {
       const heroes = response.data.results;
@@ -63,7 +60,7 @@ function searchHero() {
 
   const nameStartsWith = search.value.length > 0 ? `&nameStartsWith=${search.value}` : ''
 
-  fetch(`http://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${marvelApiKey}&hash=${md5}&limit=100${nameStartsWith}`)
+  fetch(`https://gateway.marvel.com:443/v1/public/characters?apikey=${marvelApiKey}&limit=100${nameStartsWith}`)
     .then(response => response.json())
     .then(response => {
       const heroes = response.data.results;
